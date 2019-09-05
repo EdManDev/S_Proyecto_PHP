@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $limite_de_credito = test_input($_POST["limite_de_credito"]);
   }
 
-  
+//   E Mail
   if (empty($_POST["email"])) {
     $emailErr = "Email is required";
   } else {
@@ -56,13 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   }
     
-
-//   if (empty($_POST["comment"])) {
-//     $comment = "";
-//   } else {
-//     $comment = test_input($_POST["comment"]);
-//   }
-
+// Sex
   if (empty($_POST["gender"])) {
     $genderErr = "Gender is required";
   } else {
@@ -77,7 +71,6 @@ function test_input($data) {
   return $data;
 }
 ?>
-
 <h2>PHP Form Validation Example</h2>
 <p><span class="error">(*) required field</span></p>
 <form method="post" class="formBox" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
