@@ -5,7 +5,9 @@ $username = "cliente";
 $password = "root";
 
 // Create connection
-$conn = new mysqli($id, $nombre, $gender, $estado_civil, $limite_de_credito,  $dbname);
+$conn = new mysqli($estado_civil , $limite_de_credito , $fecha_de_registro ,
+$name , $email , $gender);
+// $conn = new mysqli($id, $nombre, $gender, $estado_civil, $limite_de_credito,  $dbname);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -21,4 +23,4 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
-?>
+?
