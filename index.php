@@ -17,7 +17,7 @@
 
 <?php
 // define variables and set to empty values
-$nameErr =$estado_civilErr= $estado_civil = $limite_de_creditoErr= $limite_de_credito = $emailErr = $genderErr = "";
+$nameErr =$estado_civilErr= $estado_civil = $limite_de_creditoErr= $limite_de_credito = $fecha_de_registro= $fecha_de_registroErr = $emailErr = $genderErr = "";
 $name = $email = $gender  = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -43,6 +43,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $limite_de_creditoErr = "limite_de_credito is required";
   } else {
     $limite_de_credito = test_input($_POST["limite_de_credito"]);
+  }
+
+
+// //   fecha_de_registro 
+  if (empty($_POST["limite_de_credito"])) {
+    $fecha_de_registroErr = "fecha_de_registro is required";
+  } else {
+    $fecha_de_registro = test_input($_POST["fecha_de_registro"]);
   }
 
 //   E Mail
@@ -89,6 +97,11 @@ function test_input($data) {
   <input type="text" name="limite_de_credito" value="<?php echo $limite_de_credito;?>">
   <span class="error">* <?php echo $limite_de_creditoErr;?></span>
   <br>
+  Fecha_de_registro: 
+  <br>
+  <input type="text" name="fecha_de_registro" value="<?php echo $fecha_de_registro;?>">
+  <span class="error">* <?php echo $fecha_de_registroErr;?></span>
+  <br>
   E-mail:
   <br>
   <input type="text" name="email" value="<?php echo $email;?>">
@@ -111,6 +124,8 @@ echo "<br>";
 echo $estado_civil;
 echo "<br>";
 echo $limite_de_credito;
+echo "<br>";
+echo $fecha_de_registro;
 echo "<br>";
 echo $email;
 echo "<br>";
