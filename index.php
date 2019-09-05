@@ -10,11 +10,15 @@
         <h1>Formulario de Cliente</h1>
     </header>
 </head>
-<body>
+<style>
+.error {color: #FF0000;}
+</style>
+<body>  
+
 <?php
 // define variables and set to empty values
-$nameErr = $emailErr = $genderErr = $websiteErr = "";
-$name = $email = $gender = $comment = $website = "";
+$nameErr = $emailErr = $genderErr = $limite_de_creditoErr = "";
+$name = $email = $gender  = $limite_de_credito = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["name"])) {
@@ -37,21 +41,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   }
     
-  if (empty($_POST["website"])) {
-    $website = "";
+  if (empty($_POST["limite_de_credito"])) {
+    $limite_de_credito = "";
   } else {
-    $website = test_input($_POST["website"]);
+    $limite_de_credito = test_input($_POST["limite_de_credito"]);
     // check if URL address syntax is valid (this regular expression also allows dashes in the URL)
-    if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
-      $websiteErr = "Invalid URL";
+    if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$limite_de_credito)) {
+      $limite_de_creditoErr = "Invalid URL";
     }
   }
 
-  if (empty($_POST["comment"])) {
-    $comment = "";
-  } else {
-    $comment = test_input($_POST["comment"]);
-  }
+//   if (empty($_POST["comment"])) {
+//     $comment = "";
+//   } else {
+//     $comment = test_input($_POST["comment"]);
+//   }
 
   if (empty($_POST["gender"])) {
     $genderErr = "Gender is required";
@@ -69,20 +73,18 @@ function test_input($data) {
 ?>
 
 <h2>PHP Form Validation Example</h2>
-<p><span class="error">* required field</span></p>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+<p><span class="error">los Astrerix (*) required field</span></p>
+<form method="post" class="formBox" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
   Name: <input type="text" name="name" value="<?php echo $name;?>">
   <span class="error">* <?php echo $nameErr;?></span>
   <br><br>
   E-mail: <input type="text" name="email" value="<?php echo $email;?>">
   <span class="error">* <?php echo $emailErr;?></span>
   <br><br>
-  Website: <input type="text" name="website" value="<?php echo $website;?>">
-  <span class="error"><?php echo $websiteErr;?></span>
+  limite de credito: <input type="text" name="limite_de_credito" value="<?php echo $limite_de_credito;?>">
+  <span class="error"><?php echo $limite_de_creditoErr;?></span>
   <br><br>
-  Comment: <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
-  <br><br>
-  Gender:
+  Sexo:
   <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="female">Female
   <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="male">Male
   <input type="radio" name="gender" <?php if (isset($gender) && $gender=="other") echo "checked";?> value="other">Other  
@@ -97,12 +99,12 @@ echo $name;
 echo "<br>";
 echo $email;
 echo "<br>";
-echo $website;
+echo $limite_de_credito;
 echo "<br>";
-echo $comment;
+// echo $comment;
 echo "<br>";
 echo $gender;
 ?>
-    
+
 </body>
 </html>

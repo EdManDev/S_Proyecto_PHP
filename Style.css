@@ -16,3 +16,5 @@ header{
 .formBox{
     margin: 20px;
 }
+
+.error {color: #FF0000;}
