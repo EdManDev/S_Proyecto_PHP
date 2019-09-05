@@ -17,8 +17,8 @@
 
 <?php
 // define variables and set to empty values
-$nameErr = $emailErr = $genderErr = $limite_de_creditoErr = "";
-$name = $email = $gender  = $limite_de_credito = "";
+$nameErr =$estado_civilErr= $estado_civil = $limite_de_creditoErr= $limite_de_credito = $emailErr = $genderErr = "";
+$name = $email = $gender  = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["name"])) {
@@ -30,6 +30,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $nameErr = "Only letters and white space allowed";
     }
   }
+
+// //   estado_civil 
+  if (empty($_POST["estado_civil"])) {
+    $estado_civilErr = "Estado Civil is required";
+  } else {
+    $estado_civil = test_input($_POST["estado_civil"]);
+  }
+
+// //   limite_de_credito 
+  if (empty($_POST["limite_de_credito"])) {
+    $limite_de_creditoErr = "limite_de_credito is required";
+  } else {
+    $limite_de_credito = test_input($_POST["limite_de_credito"]);
+  }
+
   
   if (empty($_POST["email"])) {
     $emailErr = "Email is required";
@@ -41,15 +56,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   }
     
-  if (empty($_POST["limite_de_credito"])) {
-    $limite_de_credito = "";
-  } else {
-    $limite_de_credito = test_input($_POST["limite_de_credito"]);
-    // check if URL address syntax is valid (this regular expression also allows dashes in the URL)
-    if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$limite_de_credito)) {
-      $limite_de_creditoErr = "Invalid URL";
-    }
-  }
 
 //   if (empty($_POST["comment"])) {
 //     $comment = "";
@@ -78,11 +84,14 @@ function test_input($data) {
   Name: <input type="text" name="name" value="<?php echo $name;?>">
   <span class="error">* <?php echo $nameErr;?></span>
   <br><br>
+  Estado Civil: <input type="text" name="estado_civil" value="<?php echo $estado_civil;?>">
+  <span class="error">* <?php echo $estado_civilErr;?></span>
+  <br><br>
+  limite_de_credito: <input type="text" name="limite_de_credito" value="<?php echo $limite_de_credito;?>">
+  <span class="error">* <?php echo $limite_de_creditoErr;?></span>
+  <br><br>
   E-mail: <input type="text" name="email" value="<?php echo $email;?>">
   <span class="error">* <?php echo $emailErr;?></span>
-  <br><br>
-  limite de credito: <input type="text" name="limite_de_credito" value="<?php echo $limite_de_credito;?>">
-  <span class="error"><?php echo $limite_de_creditoErr;?></span>
   <br><br>
   Sexo:
   <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="female">Female
@@ -97,11 +106,11 @@ function test_input($data) {
 echo "<h2>Your Input:</h2>";
 echo $name;
 echo "<br>";
-echo $email;
+echo $estado_civil;
 echo "<br>";
 echo $limite_de_credito;
 echo "<br>";
-// echo $comment;
+echo $email;
 echo "<br>";
 echo $gender;
 ?>
