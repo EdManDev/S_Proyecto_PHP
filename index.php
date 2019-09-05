@@ -79,21 +79,30 @@ function test_input($data) {
 ?>
 
 <h2>PHP Form Validation Example</h2>
-<p><span class="error">los Astrerix (*) required field</span></p>
-<form method="post" class="formBox" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-  Name: <input type="text" name="name" value="<?php echo $name;?>">
+<p><span class="error">(*) required field</span></p>
+<form method="post" class="formBox" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+  Name:
+  <br>
+   <input type="text" name="name" value="<?php echo $name;?>">
   <span class="error">* <?php echo $nameErr;?></span>
-  <br><br>
-  Estado Civil: <input type="text" name="estado_civil" value="<?php echo $estado_civil;?>">
+  <br>
+  Estado Civil:
+  <br>
+  <input type="text" name="estado_civil" value="<?php echo $estado_civil;?>">
   <span class="error">* <?php echo $estado_civilErr;?></span>
-  <br><br>
-  limite_de_credito: <input type="text" name="limite_de_credito" value="<?php echo $limite_de_credito;?>">
+  <br>
+  limite_de_credito: 
+  <br>
+  <input type="text" name="limite_de_credito" value="<?php echo $limite_de_credito;?>">
   <span class="error">* <?php echo $limite_de_creditoErr;?></span>
-  <br><br>
-  E-mail: <input type="text" name="email" value="<?php echo $email;?>">
+  <br>
+  E-mail:
+  <br>
+  <input type="text" name="email" value="<?php echo $email;?>">
   <span class="error">* <?php echo $emailErr;?></span>
-  <br><br>
+  <br>
   Sexo:
+  <br>
   <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="female">Female
   <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="male">Male
   <input type="radio" name="gender" <?php if (isset($gender) && $gender=="other") echo "checked";?> value="other">Other  
