@@ -95,12 +95,12 @@ function test_input($data) {
           <input type="text" name="estado_civil" value="<?php echo $estado_civil;?>">
           <span class="error">* <?php echo $estado_civilErr;?></span>
           <br>
-          limite_de_credito: 
+          Limite de Credito: 
           <br>
           <input type="text" name="limite_de_credito" value="<?php echo $limite_de_credito;?>">
           <span class="error">* <?php echo $limite_de_creditoErr;?></span>
           <br>
-          Fecha_de_registro: 
+          Fecha de registro: 
           <br>
           <input type="text" name="fecha_de_registro" value="<?php echo $fecha_de_registro;?>">
           <span class="error">* <?php echo $fecha_de_registroErr;?></span>
