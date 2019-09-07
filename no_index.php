@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,10 +11,11 @@
         <h1>Formulario de Cliente</h1>
     </header>
 </head>
+
 <body>
     <form action="./config.php" method="post" class="formBox">
-        Id:<br>
-        <input type="id" placeholder="ingesar el id">
+        <!-- Id:<br>
+        <input type="id" placeholder="ingesar el id"> -->
         <br>Nombre:<br>
         <input type="nombre" placeholder="ingresar el nombre">
         <br>Sexo:<br>
@@ -31,6 +33,7 @@
         <input type="button" value="submit">
         <br>
     </form>
-    
+
 </body>
+
 </html>
