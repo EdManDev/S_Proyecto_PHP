@@ -15,7 +15,7 @@
     <div class="service-info">
       <div class="card card-1">
         <form action="./insert_it.php" method="POST"  class="formBox" >
-          ID:
+          Id:
           <br>
           <input name="id">
           <br>
@@ -41,8 +41,8 @@
           <br>
           Sexo:
           <br>
-          <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="female">Female
           <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="male">Male
+          <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="female">Female
           <input type="radio" name="gender" <?php if (isset($gender) && $gender=="other") echo "checked";?> value="other">Other  
           <br><br>
           <input type="submit" name="submit" value="Submit">  

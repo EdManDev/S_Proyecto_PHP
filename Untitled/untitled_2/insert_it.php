@@ -30,10 +30,10 @@
   $sql = "INSERT INTO cliente (id, nombre, estado_civil, email, limite_de_credito, fecha_de_registro, gender ) VALUES ('$id','$nombre', '$estado_civil', '$email', '$limite_de_credito' ,'$fecha_de_registro','$gender')";
 
   if($mysqli->query($sql) === true){
-      echo "Congratulation data has inserted successfully.";
+      echo " ✅ Congratulation data has inserted successfully.";
 
   } else{
-      echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
+      echo "❌ ERROR: Could not able to execute $sql. " . $mysqli->error;
   }
 
   //Show the data after submit
