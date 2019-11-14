@@ -1,6 +1,5 @@
 <?php
   require_once("./connection.php");
-  
   $nombre=$__post["nombre"];
   $apellido=$__post["apellido"];
 
