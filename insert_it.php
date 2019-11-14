@@ -29,7 +29,7 @@
 
   if($mysqli->query($sql) === true){
       echo "Congratulation data has inserted successfully.";
-
+ 
   } else{
       echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
   }
