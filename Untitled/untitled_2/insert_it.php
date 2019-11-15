@@ -24,10 +24,10 @@
   $email = $mysqli->real_escape_string($_REQUEST['email']);
   $limite_de_credito = $mysqli->real_escape_string($_REQUEST['limite_de_credito']);
   $fecha_de_registro = $mysqli->real_escape_string($_REQUEST['fecha_de_registro']);
-  $gender = $mysqli->real_escape_string($_REQUEST['gender']);
+  $sexo = $mysqli->real_escape_string($_REQUEST['sexo']);
 
   // Attempt insert query execution
-  $sql = "INSERT INTO cliente (id, nombre, estado_civil, email, limite_de_credito, fecha_de_registro, gender ) VALUES ('$id','$nombre', '$estado_civil', '$email', '$limite_de_credito' ,'$fecha_de_registro','$gender')";
+  $sql = "INSERT INTO cliente (id, nombre, estado_civil, email, limite_de_credito, fecha_de_registro, sexo ) VALUES ('$id','$nombre', '$estado_civil', '$email', '$limite_de_credito' ,'$fecha_de_registro','$sexo')";
 
   if($mysqli->query($sql) === true){
       echo " ✅ Congratulation data has inserted successfully.";
